@@ -1,0 +1,16 @@
+{
+    "CN": "HollyMolly",
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "C": "NL",
+            "L": "Amsterdam",
+            "ST": "North Holland",
+            "O": "BubbleMubble",
+            "OU": "CA Services"
+        }
+    ]
+}
