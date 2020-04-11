@@ -1,6 +1,7 @@
 package log
 
 import (
+	"io"
 	"io/ioutil"
 	"os"
 	"path"
@@ -137,6 +138,16 @@ func (l *Log) Reset() error {
 	l.segments = new.segments
 	l.activeSegment = new.activeSegment
 	return nil
+}
+
+func (l *Log) Reader() io.Reader {
+	l.mu.RLock()
+	defer l.mu.RUnlock()
+	readers := make([]io.Reader, len(l.segments))
+	for i, segment := range l.segments {
+		readers[i] = segment.store
+	}
+	return io.MultiReader(readers...)
 }
 
 func (l *Log) LowestOffset() (uint64, error) {

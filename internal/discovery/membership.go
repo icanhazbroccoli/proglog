@@ -16,7 +16,7 @@ type Config struct {
 
 type Handler interface {
 	Join(name, addr string) error
-	Leave(namem, addr string) error
+	Leave(name string) error
 }
 
 type Membership struct {
@@ -97,7 +97,6 @@ func (s *Membership) handleJoin(m serf.Member) {
 func (s *Membership) handleLeave(m serf.Member) {
 	if err := s.handler.Leave(
 		m.Name,
-		m.Tags["rpc_addr"],
 	); err != nil {
 		log.Printf(
 			"[ERROR] proglog: failed to leave: %s",

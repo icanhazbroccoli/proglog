@@ -9,7 +9,10 @@ require (
 	github.com/golang/protobuf v1.3.5 // indirect
 	github.com/gorilla/mux v1.7.4
 	github.com/grpc-ecosystem/go-grpc-middleware v1.0.0
+	github.com/hashicorp/raft v1.1.1
+	github.com/hashicorp/raft-boltdb v0.0.0-20171010151810-6e5ba93211ea
 	github.com/hashicorp/serf v0.8.5
+	github.com/soheilhy/cmux v0.1.4
 	github.com/stretchr/testify v1.5.1
 	github.com/travisjeffery/go-dynaport v0.0.0-20171218080632-f8768fb615d5
 	github.com/travisjeffery/proglog v0.0.0-20190925033036-bf78e42cd8a1
